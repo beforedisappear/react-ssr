@@ -4,7 +4,7 @@ import { Transform } from "node:stream";
 
 const isProduction = process.env.NODE_ENV === "production";
 const port = process.env.PORT || 5173;
-const base = process.env.BASE || "/";
+const base = process.env.BASE || "";
 const ABORT_DELAY = 10000;
 
 /** @type {import('vite').ViteDevServer | undefined} */
@@ -49,9 +49,11 @@ server.use("*all", async (req, res) => {
 
     /** @type {string} */
     let template;
-    /** @type {import('./src/entry-server.ts').render} */
+
     // Функция рендеринга React-дерева на сервере (SSR + streaming)
+    /** @type {import('./src/entry-server.ts').render} */
     let render;
+
     if (!isProduction) {
       // В dev режиме каждый раз читаем index.html с диска,
       // чтобы подхватывать изменения без пересборки.
