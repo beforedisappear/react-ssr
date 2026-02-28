@@ -1,4 +1,5 @@
 import { Link, Outlet } from "react-router-dom";
+import { ThemeSwitcher } from "../../features/theme-switcher/theme-switcher";
 
 export function RootLayout() {
   return (
@@ -14,6 +15,7 @@ export function RootLayout() {
           <Link to="/">Главная</Link>
           <Link to="/about">О проекте</Link>
           <Link to="/counter">Счётчик</Link>
+          <ThemeSwitcher />
         </nav>
       </header>
 

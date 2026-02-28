@@ -63,7 +63,7 @@ server.use("*all", async (req, res) => {
       // - подставил правильные пути к ассетам
       template = await vite.transformIndexHtml(url, template);
       // Загружаем серверный entry через Vite (ESM-модуль с hot reload)
-      render = (await vite.ssrLoadModule("/src/entry-server.tsx")).render;
+      render = (await vite.ssrLoadModule("/src/app/entry-server.tsx")).render;
     } else {
       // В продакшене используем уже закэшированный HTML-шаблон
       template = templateHtml;

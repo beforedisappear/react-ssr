@@ -1,5 +1,5 @@
 import type { RouteObject } from "react-router-dom";
-import { RootLayout } from "./root-layout";
+import { RootLayout } from "./layouts/root-layout";
 import { HomePage } from "./pages/home-page";
 import { AboutPage } from "./pages/about-page";
 import { CounterPage } from "./pages/counter-page";
